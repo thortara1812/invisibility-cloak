@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invisibility Cloak Web App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Invisibility Cloak Effect</h1>
+
+<div class="upload-form">
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="video" accept="video/*">
+        <input type="submit" value="Upload Video">
+    </form>
+</div>
+
+<div id="video-container">
+    <h2>Live Invisibility Cloak Effect:</h2>
+    <img id="live-video" src="/video_feed/{{ filename }}" alt="Live Video">
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
